@@ -49,6 +49,10 @@ public class NematodeVisualiser extends PApplet
         }
 	}
 
+	for(Nematodes n:nematodes)
+        {
+            n.render(this);
+        }
 
 	public void draw()
 	{	

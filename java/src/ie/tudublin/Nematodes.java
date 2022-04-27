@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import processing.core.PApplet;
 import processing.data.Table;
@@ -68,6 +69,40 @@ public class Nematodes {
 
 	public boolean HasEyes() {
         return eyes;
+    }
+
+	public void render(NematodeVisualiser pa)
+    {
+		//code to show length
+		for(int l = 0; l < length; l++)
+        {
+            pa.circle(x, y, extent);;
+        }
+
+		//code to draw legs
+		if(limbs == 1){
+			pa.line(x1, y1, x2, y2);
+		}
+
+		//code to draw gender specific features
+		if(gender == "m"){
+			pa.line(x1, y1, x2, y2);
+			pa.circle(x, y, extent);
+		}
+		if(gender == "f"){
+			pa.circle(x, y, extent);
+		}
+		if(gender == "h"){
+			pa.line(x1, y1, x2, y2);
+			pa.circle(x, y, extent);
+			pa.circle(x, y, extent);
+		}
+	
+		//code to draw eyes
+		if(eyes == 1){
+			pa.line(x1, y1, x2, y2);
+			pa.circle(x, y, extent);
+		}
     }
 
 }
